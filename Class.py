@@ -39,3 +39,25 @@ class Grille:
 
     def affichage(self):
         pyxel.blt(self.x, self.y, self.image, self.u, self.v, self.largeur, self.hauteur, self.colkey, scale = self.scale)
+
+# Case.position et Case.est_clique à faire
+class Case:
+    def __init__(self,numero):
+        self.numero = numero
+
+        self.x = 0
+        self.y = 0
+
+    def position(self):
+        if self.numero < 4:
+            self.x = self.numero * 1
+            self.y = 20
+        elif self.numero < 7:
+            self.x = (self.numero-3) * 1
+            self.y = 70
+        else:
+            self.x = (self.numero - 6) * 1
+            self.y = 120
+
+    def est_clique(self):
+        pass
