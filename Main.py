@@ -27,7 +27,7 @@ class App:
         for case in self.liste_case:
             case.position()
             case.ligne_et_colonne()
-            if case.est_clique():
+            if case.est_clique() and self.tableau_formes[case.ligne-1][case.colonne-1] == None:
                 self.tableau_formes[case.ligne-1][case.colonne-1] = (Class.Forme(self.tour_joueur,case.ligne,case.colonne))
                 self.tour_joueur = sum(self.tour_joueur == 1
                                        for i in range(1)) + 1
